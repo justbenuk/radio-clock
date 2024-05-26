@@ -1,9 +1,10 @@
 'use server'
+
 export async function getWeather(): Promise<any> {
 
   const headers: HeadersInit = {
-    'X-RapidAPI-Key': process.env.API_KEY,
-    'X-RapidAPI-Host': process.env.API_HOST,
+    'X-RapidAPI-Key': process.env.API_KEY as string,
+    'X-RapidAPI-Host': process.env.API_HOST as string,
 
   }
   const url = 'https://weather-app315.p.rapidapi.com/current.json?q=Tamworth';
