@@ -1,5 +1,5 @@
 'use server'
-export async function getWeather(): Promise<Response> {
+export async function getWeather(): Promise<any> {
 
   const headers: HeadersInit = {
     'X-RapidAPI-Key': process.env.API_KEY,
