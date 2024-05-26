@@ -16,9 +16,9 @@ type RootProps = {
 
 export default function RootLayout({ children }: RootProps) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme='dracula'>
       <body className={inter.className}>
-        <main>{children}</main>
+        <main className="min-h-screen py-12">{children}</main>
       </body>
     </html>
   );
