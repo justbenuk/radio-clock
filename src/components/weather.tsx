@@ -1,5 +1,5 @@
 'use client'
-import { getWeather } from "@/app/actions/weather.js"
+import { getWeather } from "@/app/actions/weather"
 import { useState, useEffect } from "react"
 
 export default function Weather() {

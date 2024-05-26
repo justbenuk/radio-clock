@@ -11,9 +11,9 @@ export async function getWeather() {
   };
 
   try {
-    const response = await fetch(url, options, );
+    const response = await fetch(url, options as {});
     return response.json()
   } catch (error) {
-    return console.log('<p>Sorry There was an error</p>')
+    console.log('<p>Sorry There was an error</p>')
   }
 }
