@@ -1,19 +1,21 @@
 'use server'
-export async function getWeather() {
+export async function getWeather(): Promise<Response> {
 
+  const headers: HeadersInit = {
+    'X-RapidAPI-Key': process.env.API_KEY,
+    'X-RapidAPI-Host': process.env.API_HOST,
+
+  }
   const url = 'https://weather-app315.p.rapidapi.com/current.json?q=Tamworth';
-  const options = {
+  const options: RequestInit = {
     method: 'GET',
-    headers: {
-      'X-RapidAPI-Key': process.env.API_KEY,
-      'X-RapidAPI-Host': process.env.API_HOST,
-    }
+    headers,
   };
 
   try {
-    const response = await fetch(url, options as {});
+    const response = await fetch(url, options);
     return response.json()
   } catch (error) {
-    console.log('<p>Sorry There was an error</p>')
+    throw (error)
   }
 }
