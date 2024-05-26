@@ -5,8 +5,8 @@ export async function getWeather() {
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': process.env.API_KEY,  
-      'X-RapidAPI-Host': process.env.API_HOST
+      'X-RapidAPI-Key': process.env.API_KEY as string,
+      'X-RapidAPI-Host': process.env.API_HOST as string,
     }
   };
 
