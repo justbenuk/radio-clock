@@ -13,10 +13,10 @@ export async function getWeather(): Promise<any> {
     headers,
   };
 
-  try {
     const response = await fetch(url, options);
-    return response.json()
-  } catch (error) {
-    throw (error)
+
+    if(!response.ok){
+    throw new Error('failed to fetch data')
   }
+    return response.json()
 }
